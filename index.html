@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071525">
+  <meta name="description" content="Plataforma de microaulas de projetos elétricos industriais do SENAI Hub.">
+  <title>Microaulas de Projetos Elétricos | SENAI Hub</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/brand/logo-senai-hub.webp" type="image/webp">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Página inicial">
+      <img src="assets/brand/logo-senai-hub.webp" alt="SENAI Hub" width="172" height="50">
+      <span><strong>Academia de Projetos</strong><small>Microaulas técnicas</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#microaulas">Microaulas</a><a href="#trilha">Trilha</a><a href="#progresso">Progresso</a>
+    </nav>
+    <div class="top-actions">
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Alternar tema">☼</button>
+      <button id="installBtn" class="button ghost" type="button" hidden>Instalar</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-grid"></div>
+      <div class="hero-copy">
+        <span class="eyebrow">FORMAÇÃO TÉCNICA • PROJETOS ELÉTRICOS INDUSTRIAIS</span>
+        <h1>Da subestação ao <em>memorial descritivo.</em></h1>
+        <p>Uma trilha visual, prática e progressiva para dimensionar, analisar, documentar e validar instalações elétricas industriais.</p>
+        <div class="hero-actions">
+          <button id="continueBtn" class="button primary" type="button">▶ Continuar estudando</button>
+          <a class="button secondary" href="#microaulas">Ver 7 microaulas</a>
+        </div>
+        <div class="hero-stats" aria-label="Estatísticas da plataforma">
+          <div><strong>7</strong><span>microaulas</span></div>
+          <div><strong>61</strong><span>telas técnicas</span></div>
+          <div><strong>100%</strong><span>visual e responsiva</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <img src="assets/microaulas/01/01-capa.webp" alt="" fetchpriority="high">
+        <span class="floating-tag tag-a">380/220 V</span><span class="floating-tag tag-b">225 kVA</span><span class="floating-tag tag-c">TN-S + SPDA</span>
+      </div>
+    </section>
+
+    <section class="dashboard" id="progresso" aria-labelledby="progressTitle">
+      <div><span class="eyebrow">SEU PAINEL</span><h2 id="progressTitle">Progresso da trilha</h2></div>
+      <div class="progress-card"><div class="progress-ring" id="progressRing"><span id="progressPercent">0%</span></div><div><strong id="progressLabel">Comece pela Microaula 1</strong><small id="progressDetail">0 de 7 módulos concluídos</small></div></div>
+      <button id="resetBtn" class="button ghost danger" type="button">Zerar progresso</button>
+    </section>
+
+    <section class="catalog" id="microaulas" aria-labelledby="catalogTitle">
+      <div class="section-heading"><div><span class="eyebrow">BIBLIOTECA TÉCNICA</span><h2 id="catalogTitle">Escolha uma microaula</h2></div><p>Estude na ordem sugerida ou acesse diretamente o tema necessário para seu projeto.</p></div>
+      <div class="toolbar">
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar por transformador, SPDA, iluminação..." autocomplete="off"></label>
+        <div class="filters" id="filters" role="group" aria-label="Filtrar microaulas">
+          <button class="chip active" data-filter="all">Todas</button><button class="chip" data-filter="dimensionamento">Dimensionamento</button><button class="chip" data-filter="protecao">Proteção</button><button class="chip" data-filter="documentacao">Documentação</button>
+        </div>
+      </div>
+      <div class="lesson-grid" id="lessonGrid"></div>
+      <p class="empty" id="emptyState" hidden>Nenhuma microaula encontrada para esse termo.</p>
+    </section>
+
+    <section class="roadmap" id="trilha" aria-labelledby="roadmapTitle">
+      <div class="section-heading"><div><span class="eyebrow">SEQUÊNCIA RECOMENDADA</span><h2 id="roadmapTitle">Uma trilha que fecha o projeto</h2></div></div>
+      <div class="roadmap-line" id="roadmapLine"></div>
+    </section>
+
+    <section class="value-section">
+      <div class="value-copy"><span class="eyebrow">APRENDIZAGEM APLICADA</span><h2>Observe. Calcule. Compare. Documente.</h2><p>Cada microaula foi construída com exemplos industriais coerentes e imagens técnicas para apoiar aulas presenciais, revisão individual e consulta em campo.</p></div>
+      <div class="value-grid"><article><b>01</b><h3>Visualização</h3><p>Carrosséis em alta resolução e modo apresentação.</p></article><article><b>02</b><h3>Interação</h3><p>Progresso, anotações, atalhos e desafios rápidos.</p></article><article><b>03</b><h3>Continuidade</h3><p>O mesmo estudo industrial evolui entre os módulos.</p></article></div>
+    </section>
+  </main>
+
+  <footer><img src="assets/brand/logo-senai-hub.webp" alt="SENAI Hub"><p>Desenvolvido por <strong>Joelson M. Mendes</strong> — Especialista em Energia e IoT.</p><span>Conteúdo educacional • 2026</span></footer>
+
+  <dialog id="lessonDialog" class="lesson-dialog">
+    <div class="viewer-shell">
+      <header class="viewer-head"><div><span id="viewerKicker"></span><h2 id="viewerTitle"></h2></div><div class="viewer-actions"><button id="presentationBtn" class="icon-btn" title="Modo apresentação">⛶</button><button id="closeBtn" class="icon-btn" title="Fechar">×</button></div></header>
+      <div class="viewer-main">
+        <section class="slide-stage" id="slideStage"><button id="prevBtn" class="slide-nav prev" aria-label="Tela anterior">‹</button><img id="slideImage" alt=""><button id="nextBtn" class="slide-nav next" aria-label="Próxima tela">›</button><div class="slide-counter" id="slideCounter"></div></section>
+        <aside class="study-panel">
+          <div class="panel-tabs"><button class="panel-tab active" data-panel="summary">Resumo</button><button class="panel-tab" data-panel="notes">Anotações</button><button class="panel-tab" data-panel="quiz">Desafio</button></div>
+          <div class="panel-content active" id="panel-summary"><h3>Você vai aprender</h3><ul id="objectivesList"></ul><div class="tip"><strong>Atalho</strong><span>Use ← → para navegar e F para tela cheia.</span></div></div>
+          <div class="panel-content" id="panel-notes"><label for="notesArea">Suas anotações ficam salvas neste dispositivo.</label><textarea id="notesArea" rows="12" placeholder="Registre fórmulas, dúvidas e aplicações..."></textarea><span class="save-status" id="saveStatus">Salvo automaticamente</span></div>
+          <div class="panel-content" id="panel-quiz"><h3 id="quizQuestion"></h3><div class="quiz-options" id="quizOptions"></div><p id="quizFeedback" class="quiz-feedback"></p></div>
+          <button id="completeBtn" class="button complete" type="button">✓ Marcar como concluída</button>
+        </aside>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
