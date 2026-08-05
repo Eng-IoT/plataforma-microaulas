@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="320" viewBox="0 0 1100 320">
+  <rect width="1100" height="320" rx="42" fill="#ffffff"/>
+  <g transform="translate(54 62)" fill="#005ca9">
+    <rect x="0" y="0" width="34" height="196" rx="6"/>
+    <rect x="52" y="0" width="34" height="196" rx="6"/>
+    <rect x="104" y="0" width="34" height="196" rx="6"/>
+    <path d="M156 0h34v196h-34zM208 0h34v196h-34zM260 0h34v196h-34z"/>
+    <path d="M0 0l294 196H238L0 38z" opacity=".22"/>
+  </g>
+  <text x="392" y="157" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="900" fill="#005ca9" letter-spacing="2">SENAI</text>
+  <text x="397" y="234" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" fill="#f58220" letter-spacing="12">HUB</text>
+  <text x="618" y="229" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600" fill="#17324d">INOVAÇÃO E TECNOLOGIA</text>
+</svg>
