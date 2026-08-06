@@ -85,7 +85,7 @@
     <div class="viewer-shell">
       <header class="viewer-head"><div><span id="viewerKicker"></span><h2 id="viewerTitle"></h2></div><div class="viewer-actions"><button id="presentationBtn" class="icon-btn" title="Modo apresentação">⛶</button><button id="closeBtn" class="icon-btn" title="Fechar">×</button></div></header>
       <div class="viewer-main">
-        <section class="slide-stage" id="slideStage"><button id="prevBtn" class="slide-nav prev" aria-label="Tela anterior">‹</button><img id="slideImage" alt=""><button id="nextBtn" class="slide-nav next" aria-label="Próxima tela">›</button><div class="slide-counter" id="slideCounter"></div></section>
+        <section class="slide-stage" id="slideStage"><button id="prevBtn" class="slide-nav prev" aria-label="Tela anterior">‹</button><button id="expandImageBtn" class="slide-expand" aria-label="Abrir imagem inteira" title="Clique para visualizar a imagem inteira"><img id="slideImage" alt=""><span>⌕ Ver imagem inteira</span></button><button id="nextBtn" class="slide-nav next" aria-label="Próxima tela">›</button><div class="slide-counter" id="slideCounter"></div></section>
         <aside class="study-panel">
           <div class="panel-tabs"><button class="panel-tab active" data-panel="summary">Resumo</button><button class="panel-tab" data-panel="notes">Anotações</button><button class="panel-tab" data-panel="quiz">Desafio</button></div>
           <div class="panel-content active" id="panel-summary"><h3>Você vai aprender</h3><ul id="objectivesList"></ul><div class="tip"><strong>Atalho</strong><span>Use ← → para navegar e F para tela cheia.</span></div></div>
@@ -97,6 +97,13 @@
       <div class="thumbs" id="thumbs"></div>
     </div>
   </dialog>
+
+  <div id="imageLightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada da aula" hidden>
+    <div class="lightbox-toolbar"><span id="lightboxCounter"></span><span class="lightbox-hint">Clique para ampliar • arraste ou role para explorar</span><button id="lightboxClose" class="lightbox-close" type="button" aria-label="Fechar imagem ampliada">×</button></div>
+    <button id="lightboxPrev" class="lightbox-nav prev" type="button" aria-label="Imagem anterior">‹</button>
+    <div class="lightbox-canvas" id="lightboxCanvas"><img id="lightboxImage" alt=""></div>
+    <button id="lightboxNext" class="lightbox-nav next" type="button" aria-label="Próxima imagem">›</button>
+  </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
