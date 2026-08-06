@@ -38,3 +38,38 @@ footer{border-top:1px solid var(--line);padding:28px clamp(20px,6vw,90px);displa
 .lightbox-nav.next{grid-column:3;grid-row:2}
 @media(max-width:600px){.lesson-dialog{height:100dvh}.viewer-head{min-height:64px;padding:8px 10px}.viewer-head h2{font-size:.88rem;max-width:68vw}.viewer-main{height:auto;min-height:0}.slide-nav{width:38px;height:54px;font-size:2rem}.slide-nav.prev{left:6px}.slide-nav.next{right:6px}.slide-counter{right:8px;bottom:8px}.slide-expand span{display:none}.thumbs{height:72px;padding:7px 10px}.thumb{flex-basis:42px}.thumb img{height:54px}.image-lightbox{grid-template-columns:48px minmax(0,1fr) 48px;grid-template-rows:58px minmax(0,1fr)}.lightbox-toolbar{padding:6px 8px}.lightbox-hint{display:none}.lightbox-close{width:42px;height:42px;margin-left:auto}.lightbox-canvas{padding:6px}.lightbox-nav{width:40px;height:58px;font-size:2rem;border-radius:11px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Correção definitiva: a tela didática inteira deve caber na área útil */
+.slide-stage{
+  isolation:isolate;
+  contain:layout paint;
+  padding:clamp(8px,1.2vw,18px);
+}
+.slide-expand{
+  position:absolute;
+  inset:clamp(8px,1.2vw,18px);
+  width:auto;
+  height:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.slide-expand #slideImage{
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  flex:none;
+}
+.thumb img{object-fit:contain;background:#02070d}
+@media(max-width:850px){
+  .lesson-dialog{width:100%;height:100dvh;max-width:none;max-height:none;border-radius:0}
+  .viewer-shell{height:100dvh;grid-template-rows:auto minmax(0,1fr) auto}
+  .viewer-main{height:auto!important;min-height:0}
+  .slide-stage{height:100%;padding:6px}
+  .slide-expand{inset:6px}
+}
