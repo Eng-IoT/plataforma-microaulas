@@ -21,6 +21,7 @@
       <a href="#microaulas">Microaulas</a><a href="#trilha">Trilha</a><a href="#progresso">Progresso</a>
     </nav>
     <div class="top-actions">
+      <button id="adminBtn" class="button ghost admin-entry" type="button">⚙ Administrar</button>
       <button id="themeBtn" class="icon-btn" type="button" aria-label="Alternar tema">☼</button>
       <button id="installBtn" class="button ghost" type="button" hidden>Instalar</button>
     </div>
@@ -104,7 +105,47 @@
     <div class="lightbox-canvas" id="lightboxCanvas"><img id="lightboxImage" alt=""></div>
     <button id="lightboxNext" class="lightbox-nav next" type="button" aria-label="Próxima imagem">›</button>
   </div>
+
+  <dialog id="loginDialog" class="admin-dialog login-dialog">
+    <form id="loginForm" class="admin-card">
+      <header class="admin-head"><div><span class="eyebrow">ACESSO RESTRITO</span><h2>Administração</h2></div><button class="icon-btn" id="loginClose" type="button" aria-label="Fechar">×</button></header>
+      <p>Entre com o usuário administrador cadastrado no Firebase.</p>
+      <label>E-mail<input id="adminEmail" type="email" value="jmm.engiot@gmail.com" autocomplete="username" required></label>
+      <label>Senha<input id="adminPassword" type="password" autocomplete="current-password" required></label>
+      <p id="loginError" class="form-error" role="alert"></p>
+      <button class="button primary" id="loginSubmit" type="submit">Entrar no gerenciador</button>
+    </form>
+  </dialog>
+
+  <dialog id="adminDialog" class="admin-dialog admin-manager">
+    <div class="manager-shell">
+      <header class="admin-head manager-head"><div><span class="eyebrow">SENAI HUB • CONTEÚDO</span><h2>Gerenciador de microaulas</h2><small id="adminIdentity"></small></div><div class="admin-actions"><button id="newLessonBtn" class="button primary" type="button">＋ Nova microaula</button><button id="logoutBtn" class="button ghost" type="button">Sair</button><button id="adminClose" class="icon-btn" type="button" aria-label="Fechar">×</button></div></header>
+      <div class="manager-body">
+        <aside class="admin-list-panel"><div class="admin-list-title"><strong>Conteúdo da plataforma</strong><span id="adminLessonCount"></span></div><div id="adminLessonList" class="admin-lesson-list"></div></aside>
+        <form id="lessonForm" class="lesson-editor">
+          <input id="lessonDocId" type="hidden">
+          <div class="editor-heading"><div><span class="eyebrow">EDITOR</span><h3 id="editorTitle">Nova microaula</h3></div><span id="editorStatus" class="save-status"></span></div>
+          <div class="form-grid">
+            <label>Número/ordem<input id="lessonOrder" type="number" min="1" step="1" required></label>
+            <label class="wide">Título<input id="lessonTitle" type="text" maxlength="100" required></label>
+            <label class="wide">Descrição curta<textarea id="lessonShort" rows="2" maxlength="240" required></textarea></label>
+            <label class="wide">Categorias <small>Separe por vírgula</small><input id="lessonCategories" type="text" placeholder="dimensionamento, protecao" required></label>
+            <label class="wide">Objetivos de aprendizagem <small>Um por linha</small><textarea id="lessonObjectives" rows="5" required></textarea></label>
+            <label class="wide">Pergunta do desafio<input id="lessonQuizQuestion" type="text" required></label>
+            <label class="wide">Alternativas <small>Uma por linha</small><textarea id="lessonQuizOptions" rows="4" required></textarea></label>
+            <label>Alternativa correta <small>1, 2, 3...</small><input id="lessonQuizAnswer" type="number" min="1" value="1" required></label>
+            <label class="check-field"><input id="lessonPublished" type="checkbox" checked><span>Publicada para os alunos</span></label>
+          </div>
+          <section class="upload-zone"><div><strong>Imagens da microaula</strong><p>Selecione WebP, PNG ou JPG. A primeira imagem será a capa.</p></div><label class="button secondary file-button">Selecionar imagens<input id="lessonImages" type="file" accept="image/webp,image/png,image/jpeg" multiple></label></section>
+          <div id="imageQueue" class="image-queue"></div>
+          <div class="upload-progress" id="uploadProgress" hidden><span id="uploadProgressText">Preparando envio...</span><div><i id="uploadProgressBar"></i></div></div>
+          <div class="editor-actions"><button id="deleteLessonBtn" class="button ghost danger" type="button" hidden>Excluir</button><span></span><button id="cancelEditBtn" class="button ghost" type="button">Limpar</button><button id="saveLessonBtn" class="button primary" type="submit">Salvar e organizar</button></div>
+        </form>
+      </div>
+    </div>
+  </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
+  <script type="module" src="firebase-admin.js"></script>
 </body>
 </html>

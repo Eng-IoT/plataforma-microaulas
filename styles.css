@@ -73,3 +73,32 @@ footer{border-top:1px solid var(--line);padding:28px clamp(20px,6vw,90px);displa
   .slide-stage{height:100%;padding:6px}
   .slide-expand{inset:6px}
 }
+
+/* Gerenciador Firebase de microaulas */
+.admin-entry.is-authenticated{border-color:var(--green);color:var(--green)}
+.admin-dialog{padding:0;border:0;background:transparent;color:var(--ink);max-width:none;max-height:none}
+.admin-dialog::backdrop{background:rgba(2,7,14,.86);backdrop-filter:blur(9px)}
+.admin-card{width:min(440px,calc(100vw - 28px));background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow);display:grid;gap:17px}
+.admin-card p{margin:0;color:var(--muted)}
+.admin-card label,.lesson-editor label{display:grid;gap:7px;font-size:.78rem;font-weight:800;color:var(--muted)}
+.admin-card input,.lesson-editor input,.lesson-editor textarea{width:100%;border:1px solid var(--line);border-radius:11px;background:var(--panel2);color:var(--ink);padding:11px 12px;outline:0}
+.admin-card input:focus,.lesson-editor input:focus,.lesson-editor textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,133,202,.14)}
+.admin-head{display:flex;align-items:center;justify-content:space-between;gap:18px}.admin-head h2{margin:4px 0 0}.admin-head small{color:var(--muted)}
+.form-error{min-height:20px;color:var(--red)!important;font-size:.8rem}
+.admin-manager{width:min(1540px,96vw);height:min(94dvh,1000px)}
+.manager-shell{height:100%;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);display:grid;grid-template-rows:auto minmax(0,1fr)}
+.manager-head{padding:17px 20px;border-bottom:1px solid var(--line)}.admin-actions{display:flex;align-items:center;gap:8px}
+.manager-body{min-height:0;display:grid;grid-template-columns:330px minmax(0,1fr)}
+.admin-list-panel{min-height:0;border-right:1px solid var(--line);display:grid;grid-template-rows:auto minmax(0,1fr)}
+.admin-list-title{padding:16px 18px;display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem}
+.admin-lesson-list{overflow:auto;padding:0 10px 16px;display:grid;align-content:start;gap:6px}
+.admin-lesson-item{width:100%;border:1px solid transparent;background:transparent;color:var(--ink);padding:11px 9px;border-radius:12px;display:grid;grid-template-columns:36px minmax(0,1fr) 16px;text-align:left;align-items:center;gap:8px;cursor:pointer}
+.admin-lesson-item:hover,.admin-lesson-item.active{background:var(--panel2);border-color:var(--line)}.admin-lesson-item.active>span{background:var(--orange);color:#111}
+.admin-lesson-item>span{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:var(--blue2);font-size:.7rem;font-weight:900}.admin-lesson-item div{display:grid;min-width:0}.admin-lesson-item strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.84rem}.admin-lesson-item small{color:var(--muted);font-size:.68rem}
+.lesson-editor{min-height:0;overflow:auto;padding:22px clamp(18px,3vw,40px) 32px}.editor-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.editor-heading h3{font-size:1.45rem;margin:3px 0}
+.form-grid{display:grid;grid-template-columns:180px minmax(0,1fr);gap:15px}.form-grid .wide{grid-column:1/-1}.lesson-editor label small{font-weight:500}.check-field{display:flex!important;align-items:center!important;grid-template-columns:20px 1fr!important;align-self:end;min-height:44px}.check-field input{width:18px;height:18px}
+.upload-zone{margin-top:20px;border:1px dashed rgba(245,130,32,.55);border-radius:16px;padding:17px;display:flex;justify-content:space-between;align-items:center;gap:18px;background:rgba(245,130,32,.05)}.upload-zone p{margin:4px 0 0;color:var(--muted);font-size:.76rem}.file-button{position:relative;overflow:hidden;white-space:nowrap}.file-button input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.image-queue{display:grid;gap:8px;margin-top:14px}.queue-empty{padding:20px;text-align:center;color:var(--muted);background:var(--panel2);border-radius:12px}.queue-item{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:12px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:7px}.queue-item img{width:48px;height:60px;object-fit:contain;background:#02070d;border-radius:7px}.queue-item div:nth-child(2){display:grid}.queue-item small{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.queue-item div:last-child{display:flex;gap:5px}.queue-item button{width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);cursor:pointer}
+.upload-progress{margin-top:14px;color:var(--muted);font-size:.76rem}.upload-progress>div{height:7px;background:var(--panel2);border-radius:10px;overflow:hidden;margin-top:7px}.upload-progress i{height:100%;width:0;display:block;background:linear-gradient(90deg,var(--blue),var(--orange));transition:.2s}
+.editor-actions{position:sticky;bottom:-32px;margin:24px clamp(-40px,-3vw,-18px) -32px;padding:14px clamp(18px,3vw,40px);display:grid;grid-template-columns:auto 1fr auto auto;gap:9px;background:color-mix(in srgb,var(--panel) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(12px)}
+@media(max-width:850px){.admin-entry{font-size:0;width:42px;padding:0}.admin-entry:before{content:'⚙';font-size:1.2rem}.admin-manager{width:100vw;height:100dvh}.manager-shell{border:0;border-radius:0}.manager-head{align-items:flex-start}.manager-head .admin-actions .button{font-size:0;width:42px;padding:0}.manager-head .admin-actions .button:before{font-size:1.05rem}.manager-head #newLessonBtn:before{content:'＋'}.manager-head #logoutBtn:before{content:'↪'}.manager-body{grid-template-columns:1fr;grid-template-rows:160px minmax(0,1fr)}.admin-list-panel{border-right:0;border-bottom:1px solid var(--line)}.admin-list-title{padding:9px 14px}.admin-lesson-list{display:flex;overflow-x:auto;overflow-y:hidden;padding:0 10px 9px}.admin-lesson-item{flex:0 0 230px}.lesson-editor{padding:16px 14px 28px}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.upload-zone{display:grid}.editor-actions{bottom:-28px;margin:20px -14px -28px;padding:11px 14px;grid-template-columns:auto 1fr auto}.editor-actions #cancelEditBtn{display:none}.editor-actions .button{padding:0 13px}.editor-heading h3{font-size:1.15rem}}
